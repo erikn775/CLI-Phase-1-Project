@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../environment.rb'
+
+name1 = Cli.new
+name1.start
+

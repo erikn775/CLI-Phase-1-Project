@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative '../environment.rb'
+require 'open-uri'
+require 'httparty'
+require 'pry'
 
 name1 = Cli.new
 name1.start

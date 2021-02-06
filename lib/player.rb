@@ -19,6 +19,10 @@ class Player
         @@all << self
     end
 
+    def self.all
+        @@all
+    end
+
     def display
         "#{@name} plays a #{@gender} #{@species} named #{@final_name}"
     end
@@ -31,11 +35,14 @@ class Player
     def get_gender
         puts "What is your gender?"
         @gender = gets.chomp
-        api_gender = @gender
-        if api_gender != "Male" && api_gender != "Female" 
-            api_gender= "Male"
+        @api_gender = @gender
+        if @api_gender != "Male" && @api_gender != "Female" 
+            @api_gender= "Male"
         end
-        return api_gender.capitalize
+    end
+
+    def api_gender
+        @api_gender.capitalize
     end
 
     def valid_entry?(user_input)
@@ -75,7 +82,10 @@ class Player
         species_list = species_suggestions
         puts "Choose your Species: 1. #{species_list[0]} 2. #{species_list[1]}"
         @species = species_list[gets.chomp.to_i - 1]
-        return @species
+    end
+
+    def species
+        @species
     end
 
     def name_conversion
@@ -90,12 +100,12 @@ class Player
         puts "Congrats and enjoy you journey #{@final_name}!"
     end
     
-    def self.display_players
-        puts "Would you like to see all players?"
-        user_answer = gets.chomp
-        if user_answer == "yes" || user_answer == "Yes"
-            @@all.each {|player| puts player.display}
-        end
-    end
+    # #def self.display_players
+    #     #puts "Would you like to see all players?"
+    #     user_answer = gets.chomp
+    #     if user_answer == "yes" || user_answer == "Yes"
+    #         @@all.each {|player| puts player.display}
+    #     end
+    # end
 end
 

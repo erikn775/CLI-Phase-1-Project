@@ -1,7 +1,5 @@
-
 class Api
-
-            
+      
     def name_generator(player1)
         url = "https://codexnomina.com/wp-admin/admin-ajax.php?action=get_names"
         name_retrieval = HTTParty.post(url, {
@@ -12,4 +10,3 @@ class Api
     end
 
 end
-
